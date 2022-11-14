@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Upetmobile" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#F75617</item>
+        <item name="colorPrimaryVariant">#F75617</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#F75617</item>
+        <item name="colorSecondaryVariant">#EF4300</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+
+        <item name="background">@color/black_night</item>
+        <item name="colorAccent">@color/backgroundVariantBlack</item>
+        <item name="colorOnBackground">@color/white_night</item>
+
+        <!-- Status bar color. -->
+        <!--<item name="android:statusBarColor">?attr/colorPrimaryVariant</item>-->
+
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+</resources>
