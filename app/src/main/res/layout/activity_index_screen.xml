@@ -155,7 +155,7 @@
                 android:layout_height="3dp" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/gFotoMascota"
                 android:layout_width="79dp"
                 android:layout_height="10dp"
                 android:layout_gravity="center"

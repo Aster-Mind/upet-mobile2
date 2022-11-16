@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">UPET</string>
     <string name="index_fondo">index_fondo</string>
     <string name="btn_iniciarsesion">INICIAR SESIÓN</string>
@@ -17,4 +17,23 @@
     <string name="continuar">Continuar</string>
     <string name="restablecer">Restablecer</string>
     <string name="restablecer_contrasena">Restablecer contraseña</string>
+    <string name="flotanteadoptar">flotanteAdoptar</string>
+    <string name="botonmensaje">botonMensaje</string>
+    <string name="nombre_dueño">Nombre dueño</string>
+    <string name="imagendueno">imagenDueno</string>
+    <string name="info_due_o">Info. Dueño</string>
+    <string name="peso">Peso</string>
+    <string name="peso_peso">5.0kg</string>
+    <string name="color">Color</string>
+    <string name="rubio">Rubio</string>
+    <string name="edad">Edad</string>
+    <string name="anos">5.0 años</string>
+    <string name="info">Info.</string>
+    <string name="descp_prueba">Hola, soy y me gusta mucho jugar, me encanta salir a pasear y soy muy fiel.</string>
+    <string name="sobre_mi">Sobre mi</string>
+    <string name="municipio">Municipio</string>
+    <string name="genero">Genero</string>
+    <string name="nombre">Nombre</string>
+    <string name="fotoPerro">fotoPerro</string>
+    <string name="raza">Raza</string>
 </resources>
