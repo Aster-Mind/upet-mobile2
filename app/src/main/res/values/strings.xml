@@ -36,4 +36,18 @@
     <string name="nombre">Nombre</string>
     <string name="fotoPerro">fotoPerro</string>
     <string name="raza">Raza</string>
+    <string name="correo_prueba_arturo">2119100462@soy.utj.edu.mx</string>
+    <string name="texto_prueba_perfil">Soy un estudiante de Universidad, me gustan mucho los animales en especial los perros, no puedo vivir sin ellos.</string>
+    <string name="agregar_mascota">Agregar</string>
+    <string name="bienvenido_home">Bienvenido</string>
+    <string name="adopta_un_nuevo_amigo">Adopta un nuevo amigo</string>
+    <string name="foto_usuario">foto_usuario</string>
+    <string name="imagen_usuario">imagen_usuario</string>
+    <string name="nombre_prueba">Arturo Méndez</string>
+    <string name="mi_historia_texto">Mi historia</string>
+    <string name="mis_mascotas_texto">Mis mascotas</string>
+    <string name="nombre_mascota_tarjeta">Nombre</string>
+    <string name="edad_card">Edad</string>
+    <string name="municipio_card">Municipio</string>
+    <string name="nombre_perro">Nombre</string>
 </resources>

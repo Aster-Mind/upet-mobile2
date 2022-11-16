@@ -6,4 +6,119 @@
     android:layout_height="match_parent"
     tools:context=".UserScreen">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:id="@+id/gImagenUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:contentDescription="@string/imagen_usuario"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/user1" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/background"
+            android:elevation="10dp"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gImagenUsuarioPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="@string/nombre_prueba"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:id="@+id/gCorreoUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:text="@string/correo_prueba_arturo"
+                    android:textSize="17sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="@string/mi_historia_texto"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:id="@+id/gSobreMi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:text="@string/texto_prueba_perfil"
+                    android:textSize="17sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="@string/mis_mascotas_texto"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/gListaPerrosPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/sample_card_dogs" />
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/gAgregarMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/agregar_mascota"
+                app:icon="@drawable/ic_baseline_pets_24"
+                tools:ignore="TextContrastCheck" />
+        </FrameLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

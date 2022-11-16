@@ -42,7 +42,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ubuntu_bold"
-                        android:text="Bienvenido"
+                        android:text="@string/bienvenido_home"
                         android:textColor="?attr/colorOnBackground"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -51,7 +51,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ubuntu_mediumitalic"
-                        android:text="Adopta un nuevo amigo"
+                        android:text="@string/adopta_un_nuevo_amigo"
                         android:textColor="?attr/colorOnBackground"
                         android:textSize="16sp"
                         android:textStyle="italic" />
@@ -65,13 +65,16 @@
                     android:layout_weight="1" />
 
                 <ImageView
+                    android:id="@+id/gUsuarioHome"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
+                    android:contentDescription="@string/foto_usuario"
                     android:src="@drawable/ic_baseline_account_circle_24" />
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gCartasMascotas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/sample_card_dogs" />
