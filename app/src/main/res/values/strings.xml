@@ -50,4 +50,8 @@
     <string name="edad_card">Edad</string>
     <string name="municipio_card">Municipio</string>
     <string name="nombre_perro">Nombre</string>
+    <string name="subir_foto">subir_foto</string>
+    <string name="imagen_perro_add">imagen_perro_add</string>
+    <string name="seleccionar_genero">Seleccionar genero</string>
+    <string name="seleccionar_municipio">Seleccionar municipio</string>
 </resources>

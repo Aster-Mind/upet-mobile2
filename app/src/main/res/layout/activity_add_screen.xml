@@ -4,34 +4,218 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddScreen"
-    android:background="?attr/background">
+    android:background="?attr/background"
+    tools:context=".AddScreen">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
-        <TextView
-            android:id="@+id/textView3"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/nombre_perro" />
+            android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlinedEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <ImageView
+                android:id="@+id/gImagenSubida"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:contentDescription="@string/imagen_perro_add"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/nodata" />
+
+            <ImageButton
+                android:id="@+id/gSubirFoto"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_button"
+                android:contentDescription="@string/subir_foto"
+                app:srcCompat="@drawable/ic_baseline_image_24" />
+        </FrameLayout>
+
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/correo_electronico">
+            android:layout_height="15dp" />
 
-            <com.google.android.material.textfield.TextInputEditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp">
+
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ubuntu_light"
-                android:inputType="textEmailAddress"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Datos de la mascota"
+                android:textSize="20sp"
                 tools:ignore="TextContrastCheck" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gOutlinedNombre"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gOutlinedDescripcion"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Historia (opcional)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gOutlinedGenero"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/seleccionar_genero">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gOutlinedEdad"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Edad">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:inputType="number"
+                    tools:ignore="TextContrastCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gOutlinedColor"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gOutlinedPeso"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Peso (KG)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:inputType="number"
+                    tools:ignore="TextContrastCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/gOutlinedMunicipio"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/seleccionar_municipio">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_municipio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <Button
+                android:id="@+id/gAgregarNueva"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar"
+                android:fontFamily="@font/ubuntu_bold"
+                android:background="@drawable/custom_button"
+                android:elevation="10dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
