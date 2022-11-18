@@ -42,15 +42,17 @@
                 app:srcCompat="@drawable/ic_baseline_image_24" />
         </FrameLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingHorizontal="15dp">
+            android:paddingHorizontal="15dp"
+            android:elevation="10dp">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/textView3"

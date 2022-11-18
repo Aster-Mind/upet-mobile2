@@ -60,7 +60,7 @@ class AddScreen : AppCompatActivity() {
         })
 
         cAgregarNueva.setOnClickListener() {
-           //goToUsuario()
+            //goToUsuario()
             Toast.makeText(this, "Agregado correctamente", Toast.LENGTH_SHORT).show()
             finish()
         }

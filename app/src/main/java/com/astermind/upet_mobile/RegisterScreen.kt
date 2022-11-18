@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
-import android.widget.TextView
-import com.google.android.material.textfield.TextInputLayout
 
 class RegisterScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +29,7 @@ class RegisterScreen : AppCompatActivity() {
     }
 
     // Funciones de navegacion
-    private fun Register(){
+    private fun Register() {
         val i = Intent(this, HomeScreen::class.java)
         startActivity(i)
     }

@@ -20,13 +20,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".CardScreen"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".UserScreen"
             android:exported="false">
             <meta-data

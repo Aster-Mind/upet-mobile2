@@ -1,11 +1,8 @@
 package com.astermind.upet_mobile
 
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
@@ -32,11 +29,12 @@ class IndexScreen : AppCompatActivity() {
     }
 
     // Funciones de navegacion
-    private fun goToLogin(){
+    private fun goToLogin() {
         val i = Intent(this, LoginScreen::class.java)
         startActivity(i)
     }
-    private fun goToRegister(){
+
+    private fun goToRegister() {
         val i = Intent(this, RegisterScreen::class.java)
         startActivity(i)
     }

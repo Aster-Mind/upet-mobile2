@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +19,7 @@
         app:layout_constraintVertical_bias="0.5">
 
         <ImageView
-            android:id="@+id/gFotoMascota"
+            android:id="@+id/gDetailFoto"
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:contentDescription="@string/fotoPerro"
@@ -44,7 +45,7 @@
                     android:showDividers="middle">
 
                     <TextView
-                        android:id="@+id/gNombreMascota"
+                        android:id="@+id/gDetailNombre"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -58,7 +59,7 @@
                         android:layout_weight="1" />
 
                     <TextView
-                        android:id="@+id/gGenero"
+                        android:id="@+id/gDetailGenero"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ubuntu_light"
@@ -69,12 +70,30 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/gUbicacion"
+                    android:id="@+id/gDetailUbicacion"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/ubuntu_mediumitalic"
                     android:text="@string/municipio"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/gDetailTipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ubuntu_mediumitalic"
+                    android:text="Tipo"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/gDetailRaza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/ubuntu_mediumitalic"
+                    android:text="Raza"
                     tools:ignore="TextContrastCheck" />
 
                 <Space
@@ -94,7 +113,7 @@
                     android:layout_height="15dp" />
 
                 <TextView
-                    android:id="@+id/gDescripcioni"
+                    android:id="@+id/gDetailDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/ubuntu_regular"
@@ -138,7 +157,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/gEdad"
+                            android:id="@+id/gDetailEdad"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/ubuntu_bold"
@@ -170,7 +189,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/gColor"
+                            android:id="@+id/gDetailColor"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/ubuntu_bold"
@@ -202,7 +221,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/gRaza"
+                            android:id="@+id/gDetailPeso"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/ubuntu_bold"
@@ -215,7 +234,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/ubuntu_light"
-                            android:text="@string/raza"
+                            android:text="Peso"
                             android:textAlignment="center"
                             android:textSize="14sp"
                             android:textStyle="italic" />
@@ -250,15 +269,26 @@
                     android:orientation="horizontal"
                     android:showDividers="middle">
 
-                    <ImageView
-                        android:id="@+id/gFotoDueño"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/gCardCardOwner"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:contentDescription="@string/imagendueno"
-                        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+                        android:layout_marginEnd="16dp"
+                        card_view:cardCornerRadius="100dp">
+
+                        <ImageView
+                            android:id="@+id/gDetailDueno"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:contentDescription="@string/imagendueno"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+                    </androidx.cardview.widget.CardView>
+
 
                     <TextView
-                        android:id="@+id/gNombreDueño"
+                        android:id="@+id/gDetailNombreDueno"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
