@@ -2,11 +2,11 @@ package com.astermind.upet_mobile.models
 
 var mascotaList = mutableListOf<Mascota>()
 
-val MASCOTA_ID_EXTRA = "mascotaExtra"
+
 
 class Mascota(
-    var idMascota: Int? = mascotaList.size,
-    var imagen: Int,
+    var idMascota: Int,
+    var imagen: String,
     var nombre: String,
     var tipo: String,
     var raza: String,
@@ -15,7 +15,7 @@ class Mascota(
     var historia: String,
     var edad: Int,
     var colorMascota: String,
-    var duenoFoto: Int,
+    var duenoFoto: String,
     var duenoNombre: String,
     var duenoHistoria: String,
     var peso: String

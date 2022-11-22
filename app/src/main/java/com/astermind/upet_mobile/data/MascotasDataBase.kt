@@ -1,4 +1,4 @@
-package com.astermind.upet_mobile.data
+/*package com.astermind.upet_mobile.data
 
 import com.astermind.upet_mobile.R
 import com.astermind.upet_mobile.models.Mascota
@@ -17,11 +17,11 @@ class MascotasDataBase {
                 "Hola, yo soy Spyke y soy un Husky.",
                 5,
                 "Blanco",
-                R.drawable.dueno1,
+                1,
                 "Camila",
                 "Hola, soy Camila",
                 "5.0",
             )
         )
     }
-}
+}*/

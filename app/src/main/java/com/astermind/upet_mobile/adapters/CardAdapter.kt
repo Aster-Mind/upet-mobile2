@@ -7,9 +7,10 @@ import com.astermind.upet_mobile.CardViewHolder
 import com.astermind.upet_mobile.MascotaClickListener
 import com.astermind.upet_mobile.databinding.CardPetsBinding
 import com.astermind.upet_mobile.models.Mascota
+import com.astermind.upet_mobile.models.PetItem
 
 class CardAdapter(
-    private val mascotas: List<Mascota>,
+    private val mascotas: List<PetItem>,
     private val clickListener: MascotaClickListener
     ) : RecyclerView.Adapter<CardViewHolder>() {
 

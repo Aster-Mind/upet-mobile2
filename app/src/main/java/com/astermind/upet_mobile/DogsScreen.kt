@@ -4,14 +4,24 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.astermind.upet_mobile.adapters.CardAdapter
 import com.astermind.upet_mobile.databinding.ActivityDogsScreenBinding
 import com.astermind.upet_mobile.models.*
+import com.astermind.upet_mobile.services.ApiInterface
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.gson.Gson
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class DogsScreen : AppCompatActivity() {
     private lateinit var binding: ActivityDogsScreenBinding
@@ -25,21 +35,27 @@ class DogsScreen : AppCompatActivity() {
         )
 
         val mascotaID = intent.getIntExtra(MASCOTA_ID_EXTRA, -1)
+
+
+
         val mascota = mascotaFromID(mascotaID)
+
         if (mascota != null) {
-            binding.gDetailFoto.setImageResource(mascota.imagen)
+           // binding.gDetailFoto.setImageResource(mascota.imagen)
             binding.gDetailNombre.text = mascota.nombre
-            binding.gDetailColor.text = mascota.colorMascota
+            binding.gDetailColor.text = mascota.color
             binding.gDetailGenero.text = mascota.genero
             binding.gDetailUbicacion.text = mascota.ubicacion
             binding.gDetailTipo.text = mascota.tipo
             binding.gDetailRaza.text = mascota.raza
             binding.gDetailDescripcion.text = mascota.historia
             binding.gDetailEdad.text = mascota.edad.toString()
-            binding.gDetailColor.text = mascota.colorMascota
+            binding.gDetailColor.text = mascota.color
             binding.gDetailPeso.text = mascota.peso
-            binding.gDetailDueno.setImageResource(mascota.duenoFoto)
+           // binding.gDetailDueno.setImageResource(mascota.duenoFoto)
             binding.gDetailNombreDueno.text=mascota.duenoNombre
+        }else{
+            binding.gDetailNombre.text ="No Hay"
         }
 
         val url = "\"https://api.whatsapp.com/send?phone=\"+number;"
@@ -89,11 +105,73 @@ class DogsScreen : AppCompatActivity() {
     }
 
 
-    private fun mascotaFromID(mascotaID: Int): Mascota? {
-        for (mascota in mascotaList) {
+    private fun mascotaFromID(mascotaID: Int): PetItem? {
+        /*  for (mascota in mascotaList) {
             if (mascota.idMascota == mascotaID)
-                return mascota
+                 return mascota
+         }
+         return null*/
+
+        for(ms in lMas){
+            if(ms.id == mascotaID){
+                return ms
+            }
+
         }
+
         return null
     }
+
+    private fun GetMascota(mascotaID: Int): PetItem? {
+
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://upetapi.azurewebsites.net/api/")
+            .build()
+            .create(ApiInterface::class.java)
+
+        val retrofitData = retrofitBuilder.getDataMascota()
+
+        retrofitData.enqueue(object : Callback<PetItem> {
+            override fun onResponse(
+                call: Call<PetItem>?,
+                response: Response<PetItem>?
+            ) {
+                val responseBody = response!!.body()
+
+              var mascota1  = PetItem(
+                    responseBody!!.adoptado,
+                    responseBody!!.color,
+                    responseBody!!.duenoFoto,
+                    responseBody!!.duenoHistoria,
+                    responseBody!!.duenoNombre,
+                    responseBody!!.edad,
+                    responseBody!!.historia,
+                    responseBody!!.id,
+                    responseBody!!.imagen,
+                    responseBody!!.nombre,
+                    responseBody!!.peso,
+                    responseBody!!.raza,
+                    responseBody!!.tipo,
+                    responseBody!!.ubicacion,
+                    responseBody!!.genero,
+
+                )
+
+
+
+              Log.d("asd","----------------------------------------------"+ responseBody)
+            }
+            override fun onFailure(call: Call<PetItem>?, t: Throwable) {
+                Log.d("Error:" ,"Fallo en: " + t.message)
+
+
+            }
+        })
+
+
+return null
+    }
+
+
 }

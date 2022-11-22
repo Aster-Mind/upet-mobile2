@@ -38,7 +38,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/gImagenUsuarioPerfil"
+                    android:id="@+id/gUsuarioPerfil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/ubuntu_bold"
@@ -51,7 +51,25 @@
                     android:layout_height="15dp" />
 
                 <TextView
+                    android:id="@+id/gMunicipio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:text="@string/correo_prueba_arturo"
+                    android:textSize="17sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
                     android:id="@+id/gCorreoUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
+                    android:text="@string/correo_prueba_arturo"
+                    android:textSize="17sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/gTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/ubuntu_light"
