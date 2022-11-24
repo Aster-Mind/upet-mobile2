@@ -86,7 +86,7 @@ class LoginScreen : AppCompatActivity() {
                thisSession = rsp!!
                 if(rsp?.rol=="Ong")
                 {
-                val i = Intent(context, HomeScreen::class.java)
+                val i = Intent(context, DashBoardScreen::class.java)
                 startActivity(i)
                 }
 
