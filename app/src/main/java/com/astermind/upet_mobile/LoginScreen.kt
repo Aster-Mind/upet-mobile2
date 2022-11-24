@@ -63,7 +63,7 @@ class LoginScreen : AppCompatActivity() {
 
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://upetapi.azurewebsites.net/api/")
+            .baseUrl("https://upetapiv2.azurewebsites.net/api/")
             .build()
             .create(ApiInterface::class.java)
 

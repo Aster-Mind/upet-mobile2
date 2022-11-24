@@ -111,7 +111,7 @@ class AddScreen : AppCompatActivity() {
             thisSession.nombre,
                 edadInt.toInt(),
             historia.text.toString(),
-            0,
+            3,
                 img_str,
             nombre.text.toString(),
             peso.text.toString(),
@@ -133,7 +133,7 @@ class AddScreen : AppCompatActivity() {
 
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://upetapi.azurewebsites.net/api/")
+            .baseUrl("https://upetapiv2.azurewebsites.net/api/")
             .build()
             .create(ApiInterface::class.java)
 

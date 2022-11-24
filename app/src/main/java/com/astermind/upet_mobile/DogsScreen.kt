@@ -1,9 +1,11 @@
 package com.astermind.upet_mobile
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
@@ -52,8 +54,18 @@ class DogsScreen : AppCompatActivity() {
             binding.gDetailEdad.text = mascota.edad.toString()
             binding.gDetailColor.text = mascota.color
             binding.gDetailPeso.text = mascota.peso
-           // binding.gDetailDueno.setImageResource(mascota.duenoFoto)
+
+
+            val imageBytes = Base64.decode(mascota.imagen, Base64.DEFAULT)
+            val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+
+            val imageBytes2 = Base64.decode(mascota.duenoFoto, Base64.DEFAULT)
+            val decodedImage2 = BitmapFactory.decodeByteArray(imageBytes2, 0, imageBytes2.size)
+
+           binding.gDetailFoto.setImageBitmap(decodedImage)
+            binding.gDetailDueno.setImageBitmap(decodedImage2)
             binding.gDetailNombreDueno.text=mascota.duenoNombre
+
         }else{
             binding.gDetailNombre.text ="No Hay"
         }
